@@ -1,0 +1,23 @@
+﻿<Window x:Class="chip8test.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:chip8test"
+        mc:Ignorable="d"
+        xmlns:opengl="clr-namespace:OpenGL;assembly=OpenGL.Net.WinForms"
+        Title="MainWindow" Height="274.706" Width="401.76">
+    <Grid Margin="0,0,2,1">
+        <WindowsFormsHost x:Name="HostControl" Loaded="HostControl_Loaded" Margin="10,25,10,26">
+            <opengl:GlControl ContextCreated="GlControl_ContextCreated" Render="GlControl_Render" KeyDown="GlControl_KeyDown" KeyUp="GlControl_KeyUp"/>
+        </WindowsFormsHost>
+        <Menu HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="517">
+            <MenuItem Header="File">
+                <MenuItem Header="Open" Click="Open_Click"/>
+                <MenuItem Header="Exit" Click="Exit_Click"/>
+            </MenuItem>
+        </Menu>
+        <Label Content="opcode: " Name="opcodeLabel" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="179"/>
+        <Label Content="state: ?" Name="stateLabel" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="114"/>
+    </Grid>
+</Window>
