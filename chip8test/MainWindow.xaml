@@ -8,10 +8,10 @@
         xmlns:opengl="clr-namespace:OpenGL;assembly=OpenGL.Net.WinForms"
         Title="MainWindow" Height="274.706" Width="401.76">
     <Grid Margin="0,0,2,1">
-        <WindowsFormsHost x:Name="HostControl" Loaded="HostControl_Loaded" Margin="10,25,10,26">
+        <WindowsFormsHost x:Name="HostControl" Loaded="HostControl_Loaded" Margin="20,35,20,43">
             <opengl:GlControl ContextCreated="GlControl_ContextCreated" Render="GlControl_Render" KeyDown="GlControl_KeyDown" KeyUp="GlControl_KeyUp"/>
         </WindowsFormsHost>
-        <Menu HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="517">
+        <Menu HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="392">
             <MenuItem Header="File">
                 <MenuItem Header="Open" Click="Open_Click"/>
                 <MenuItem Header="Exit" Click="Exit_Click"/>

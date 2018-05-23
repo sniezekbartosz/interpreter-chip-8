@@ -22,7 +22,6 @@ namespace chip8test
         private int soundTimer = 60;
         private OpCode opcode;
         public bool[] display = new bool[32 * 64];
-        public bool[,] gfx = new bool[32,64];
         public bool draw = false;
 
         Random random = new Random();
@@ -37,8 +36,12 @@ namespace chip8test
             PC = 0x200;
             I = 0;
             stackPointer = 0;
-            delayTimer = 0;
-            soundTimer = 0;
+            display = new bool[32 * 64];
+            VRegs = new byte[16];
+            key = new bool[16];
+            draw = false;
+            delayTimer = 60;
+            soundTimer = 60;
             for (int i = 0; i < 4096; ++i)
             {
                 Memory[i] = 0;

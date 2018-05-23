@@ -131,6 +131,7 @@ namespace chip8test
                 string fileName = dialog.FileName;
                 fileArray = File.ReadAllBytes(fileName);
                 chip.Reset();
+                Draw(new bool[64*32]);
                 chip.LoadFile(fileArray);
                 cycle -= Nop;
                 cycle = new EmulateCycle(chip.Tick);
@@ -139,7 +140,7 @@ namespace chip8test
 
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
-
+            System.Windows.Application.Current.Shutdown();
         }
 
         public void Set()
